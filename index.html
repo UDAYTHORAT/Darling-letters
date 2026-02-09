@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Darling | A True WW2 Love Story</title>
+    
+    <!-- Libraries -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Premium Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,500;0,600;1,400&family=Mrs+Saint+Delafield&family=Montserrat:wght@200;300;400;600&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'parchment': '#F9F7F2',
+                        'ink-charcoal': '#1C1C1C',
+                        'red-cross': '#8B2626',
+                        'victory-gold': '#C5A059',
+                    },
+                    fontFamily: {
+                        editorial: ['"Playfair Display"', 'serif'],
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        script: ['"Mrs Saint Delafield"', 'cursive'],
+                        sans: ['"Montserrat"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Immersive Textures */
+        body { 
+            background-color: #F9F7F2; 
+            color: #1C1C1C; 
+            scroll-behavior: smooth;
+            background-image: url('https://www.transparenttextures.com/patterns/felt.png');
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Artifact Styling */
+        .photo-frame {
+            padding: 12px;
+            background: white;
+            box-shadow: 0 20px 40px -10px rgba(0,0,0,0.15);
+            transition: transform 0.6s ease;
+        }
+        .photo-frame:hover {
+            transform: scale(1.03) rotate(0deg) !important;
+            z-index: 50;
+        }
+
+        /* Button Shine Effect */
+        .btn-vintage {
+            position: relative;
+            overflow: hidden;
+            background: #1C1C1C;
+            color: #F9F7F2;
+            transition: all 0.5s ease;
+        }
+        .btn-vintage:hover {
+            background: #8B2626;
+            letter-spacing: 0.2em;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #F9F7F2; }
+        ::-webkit-scrollbar-thumb { background: #C5A059; }
+
+        .drop-cap::first-letter {
+            font-family: 'Playfair Display';
+            font-size: 5rem;
+            float: left;
+            margin-right: 1rem;
+            line-height: 1;
+            color: #8B2626;
+        }
+    </style>
+
+    <!-- Chosen Palette: Heritage Archive (Parchment, Ink, Red Cross Crimson, Gold) -->
+    <!-- Application Structure Plan:
+         1. The Dossier (Hero): Overlapping vintage portraits (Navy Boy & Red Cross Girl) against a titled backdrop.
+         2. The Registry (Pre-Order): Immediate conversion hook with the free shipping offer.
+         3. The Narrative (Story): Large-scale immersive reading experience using the "Dawn Swim" hook.
+         4. The Making Of (Gallery): Editorial artifact cards showing the scale of the research.
+         5. The Community Hub: Elegant minimalist cards for Penpals, Stickers, and Group Chat.
+    -->
+    <!-- Technical Choice: NO SVG used. NO Mermaid JS used. NO Chart.js used. -->
+</head>
+<body class="font-serif">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-parchment/90 backdrop-blur-sm border-b border-ink-charcoal/5 px-8 py-6 flex justify-between items-center">
+        <div class="font-editorial text-3xl font-bold tracking-tighter italic">My Darling.</div>
+        <div class="hidden lg:flex space-x-12 text-[12px] font-bold uppercase tracking-[0.4em] text-ink-charcoal/60">
+            <a href="#prologue" class="hover:text-red-cross transition-colors">Prologue</a>
+            <a href="#story" class="hover:text-red-cross transition-colors">The Narrative</a>
+            <a href="#making-of" class="hover:text-red-cross transition-colors">The Making Of</a>
+            <a href="#community" class="hover:text-red-cross transition-colors">Community</a>
+        </div>
+        <button onclick="scrollToId('preorder')" class="hidden md:block bg-ink-charcoal text-white px-6 py-2 text-[12px] uppercase tracking-[0.3em] font-bold hover:bg-red-cross transition-all">Pre-Order</button>
+    </nav>
+
+    <!-- Section 1: Hero (The Archive) -->
+    <section id="prologue" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            
+            <div class="z-10 order-2 lg:order-1">
+                <span class="font-script text-5xl text-victory-gold block mb-4">To my dearest...</span>
+                <h1 class="font-editorial text-7xl md:text-9xl font-bold leading-[0.85] mb-8">
+                    A True <br> <span class="italic text-red-cross">WWII</span> Love Story.
+                </h1>
+                <p class="text-xl md:text-2xl text-ink-charcoal/70 max-w-lg leading-relaxed mb-12 italic font-light">
+                    "A chance encounter sparks a fleeting yet inseparable bond on a remote Pacific island."
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6">
+                    <button onclick="scrollToId('preorder')" class="btn-vintage px-12 py-5 text-[11px] font-bold uppercase tracking-widest shadow-2xl">
+                        Pre-Order the Book
+                    </button>
+                    <button onclick="scrollToId('story')" class="text-ink-charcoal border-b border-ink-charcoal py-5 text-[11px] font-bold uppercase tracking-widest hover:text-red-cross hover:border-red-cross transition-all">
+                        Read the Story
+                    </button>
+                </div>
+            </div>
+
+            <!-- Overlapping Portraits -->
+            <div class="relative h-[600px] order-1 lg:order-2 flex items-center justify-center">
+                <div class="photo-frame absolute top-0 right-10 w-64 md:w-80 -rotate-3 z-10">
+                    <img src="images/darling%20letter-1.avif" alt="Navy Boy Portrait" class="w-full grayscale brightness-110 contrast-125">
+                    <div class="mt-4 text-center font-editorial italic text-stone-400">Navy Recruit, 1944</div>
+                </div>
+                <div class="photo-frame absolute bottom-0 left-0 w-64 md:w-80 rotate-6 z-20">
+                    <img src="images/darling%20letter-2.avif" alt="Red Cross Girl Portrait" class="w-full grayscale brightness-110 contrast-125">
+                    <div class="mt-4 text-center font-editorial italic text-stone-400">Red Cross Girl, 1944</div>
+                </div>
+                <!-- Artistic Accent -->
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 border border-victory-gold/20 rounded-full opacity-20 pointer-events-none"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Pre-Order (High Conversion) -->
+    <section id="preorder" class="py-24 bg-ink-charcoal text-parchment">
+        <div class="max-w-4xl mx-auto px-6 text-center reveal">
+            <h2 class="font-editorial text-4xl md:text-6xl mb-6 italic">Secure the Book</h2>
+            <p class="text-victory-gold uppercase tracking-[0.4em] text-[11px] font-bold mb-12">Free shipping worldwide for all pre-orders!</p>
+            
+            <div class="bg-white/5 p-12 md:p-16 border border-white/10 relative overflow-hidden">
+                <div class="absolute -top-10 -right-10 w-40 h-40 bg-red-cross/10 rounded-full blur-3xl"></div>
+                
+                <h3 class="font-serif text-2xl mb-10 text-white/80">Add your e-mail for book updates!</h3>
+                <form id="preorderForm" class="max-w-md mx-auto space-y-8">
+                    <div class="text-left border-b border-white/20">
+                        <label class="text-[12px] uppercase tracking-[0.4em] font-bold text-white/30 block mb-2">Electronic Post (Email) *</label>
+                        <input type="email" required placeholder="name@email.com" class="w-full bg-transparent py-4 focus:ring-0 outline-none font-serif text-2xl italic text-white placeholder:text-stone-600">
+                    </div>
+                    <button type="submit" class="w-full py-6 bg-parchment text-ink-charcoal uppercase text-[11px] font-bold tracking-[0.4em] hover:bg-victory-gold hover:text-white transition-all">Submit for Updates</button>
+                </form>
+                
+                <div id="successMsg" class="hidden mt-12 text-victory-gold font-script text-5xl animate-pulse">
+                    The envelope is sealed...
+                </div>
+                <p class="mt-10 text-[11px] uppercase tracking-[0.2em] text-white/20">Launch date, pre-order window, and archive secrets included.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: The Narrative (Editorial Content) -->
+    <section id="story" class="py-32">
+        <div class="max-w-4xl mx-auto px-6 text-center reveal">
+            <h2 class="font-editorial text-5xl md:text-7xl mb-16 italic text-red-cross">The most magical love story is now a book!</h2>
+            <div class="space-y-12 text-2xl md:text-3xl font-light leading-relaxed text-ink-charcoal/80 drop-cap text-left">
+                <p>
+                    In the midst of World War II, on a remote Pacific island, a chance encounter between a Red Cross girl and a Navy boy sparks a fleeting yet inseparable bond. 
+                </p>
+                <p>
+                    They promised to swim together at dawn, but the chaos of war separated them. On the verge of life’s greatest adventure, she takes a chance and pens a letter.
+                </p>
+                <p class="font-editorial text-4xl text-ink-charcoal text-center py-12 border-y border-ink-charcoal/5">
+                    Did their love blossom? <br> Or did grim war <span class="italic text-victory-gold">blight</span> their romance?
+                </p>
+                <p class="text-xl md:text-2xl font-light text-center max-w-2xl mx-auto opacity-70 italic leading-loose">
+                    This timeless true tale of love and yearning will have you believing in magic...
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: The Making Of -->
+    <section id="making-of" class="py-32 bg-white/40 border-y border-ink-charcoal/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-24 reveal">
+                <span class="font-script text-4xl text-victory-gold block mb-4">Behind the Archive.</span>
+                <h3 class="font-editorial text-5xl italic">The making of...</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 reveal delay-100">
+                <!-- Card 1 -->
+                <div class="group cursor-pointer">
+                    <div class="bg-stone-200 aspect-[4/5] photo-frame group-hover:shadow-2xl transition-all -rotate-1">
+                        <div class="w-full h-full bg-stone-300 flex items-center justify-center text-5xl">📄</div>
+                    </div>
+                    <div class="mt-6 text-center">
+                        <h5 class="font-editorial text-2xl italic mb-2">10,000 Letters</h5>
+                        <p class="text-sm text-ink-charcoal/50 font-light leading-relaxed">Processing the staggering volume of correspondence found in the archives.</p>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="group cursor-pointer">
+                    <div class="bg-stone-200 aspect-[4/5] photo-frame group-hover:shadow-2xl transition-all rotate-2">
+                        <div class="w-full h-full bg-stone-300 flex items-center justify-center text-5xl">🖌️</div>
+                    </div>
+                    <div class="mt-6 text-center">
+                        <h5 class="font-editorial text-2xl italic mb-2">The Visual Narrative</h5>
+                        <p class="text-sm text-ink-charcoal/50 font-light leading-relaxed">Bringing the ink to life through watercolor and historical forensic research.</p>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="group cursor-pointer">
+                    <div class="bg-stone-200 aspect-[4/5] photo-frame group-hover:shadow-2xl transition-all -rotate-1">
+                        <div class="w-full h-full bg-stone-300 flex items-center justify-center text-5xl">📸</div>
+                    </div>
+                    <div class="mt-6 text-center">
+                        <h5 class="font-editorial text-2xl italic mb-2">The Legacy</h5>
+                        <p class="text-sm text-ink-charcoal/50 font-light leading-relaxed">Capturing the final moments of research as the story became a manuscript.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Community Hub -->
+    <section id="community" class="py-32">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-24 reveal">
+                <h3 class="font-editorial text-6xl italic mb-4">Join the Community...</h3>
+                <p class="text-ink-charcoal/40 uppercase tracking-[0.4em] text-[12px] font-bold">Reclaiming the lost art of connection</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="p-12 border border-ink-charcoal/10 bg-white hover:border-red-cross transition-colors group reveal text-center flex flex-col items-center">
+                    <span class="text-4xl mb-8 group-hover:scale-110 transition-transform">🏷️</span>
+                    <h4 class="font-editorial text-3xl mb-4 italic">Stickers!</h4>
+                    <p class="text-sm text-ink-charcoal/60 mb-8 font-light leading-relaxed italic">Vintage-inspired ephemera to mark your own journals.</p>
+                    <button class="text-[12px] uppercase font-bold tracking-[0.2em] border-b border-victory-gold pb-1 text-victory-gold hover:text-red-cross hover:border-red-cross transition-all">Explore Collection</button>
+                </div>
+                <!-- Card 2 -->
+                <div class="p-12 border border-ink-charcoal/10 bg-white hover:border-red-cross transition-colors group reveal delay-100 text-center flex flex-col items-center">
+                    <span class="text-4xl mb-8 group-hover:scale-110 transition-transform">✉️</span>
+                    <h4 class="font-editorial text-3xl mb-4 italic text-red-cross">PenPals!</h4>
+                    <p class="text-sm text-ink-charcoal/60 mb-8 font-light leading-relaxed italic">A registry for those who believe in the magic of waiting for the post.</p>
+                    <button class="text-[12px] uppercase font-bold tracking-[0.2em] border-b border-victory-gold pb-1 text-victory-gold hover:text-red-cross hover:border-red-cross transition-all">Join Registry</button>
+                </div>
+                <!-- Card 3 -->
+                <div class="p-12 border border-ink-charcoal/10 bg-white hover:border-red-cross transition-colors group reveal delay-200 text-center flex flex-col items-center">
+                    <span class="text-4xl mb-8 group-hover:scale-110 transition-transform">💬</span>
+                    <h4 class="font-editorial text-3xl mb-4 italic">Group Chat</h4>
+                    <p class="text-sm text-ink-charcoal/60 mb-8 font-light leading-relaxed italic">Book club and chat discussing the archives and shared findings.</p>
+                    <button class="text-[12px] uppercase font-bold tracking-[0.2em] border-b border-victory-gold pb-1 text-victory-gold hover:text-red-cross hover:border-red-cross transition-all">Enter Hub</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-24 bg-ink-charcoal text-parchment border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
+            <div class="lg:col-span-1">
+                <h4 class="font-editorial text-3xl font-bold italic mb-6">My Darling.</h4>
+                <p class="text-white/40 text-sm leading-relaxed font-light italic">A true tale discovered in a desk drawer. <br> Reclaimed for the romantic.</p>
+            </div>
+            <div>
+                <h5 class="text-[12px] uppercase tracking-[0.4em] font-bold mb-8 text-victory-gold">Contact</h5>
+                <p class="text-sm font-light mb-2">apacificromance@gmail.com</p>
+                <p class="text-xs text-white/30 leading-relaxed font-light">
+                    PO Box: 8721 Santa Monica Blvd #211 <br>
+                    West Hollywood, CA 90069
+                </p>
+            </div>
+            <div>
+                <h5 class="text-[12px] uppercase tracking-[0.4em] font-bold mb-8 text-victory-gold">Archives</h5>
+                <ul class="space-y-4 text-xs font-light text-white/50">
+                    <li><a href="#" class="hover:text-red-cross transition-colors uppercase tracking-widest">Instagram</a></li>
+                    <li><a href="#" class="hover:text-red-cross transition-colors uppercase tracking-widest">TikTok</a></li>
+                    <li><a href="#" class="hover:text-red-cross transition-colors uppercase tracking-widest">YouTube</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-[12px] uppercase tracking-[0.4em] font-bold mb-8 text-victory-gold">Established</h5>
+                <p class="text-sm italic font-serif opacity-50">California, 2024</p>
+            </div>
+        </div>
+        <div class="mt-24 pt-10 border-t border-white/5 text-center text-[11px] uppercase tracking-[0.6em] text-white/10">
+            &copy; 2024 My Darling Letters. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Reveal on scroll
+        const reveal = () => {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(el => {
+                const windowHeight = window.innerHeight;
+                const elementTop = el.getBoundingClientRect().top;
+                const elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    el.classList.add('active');
+                }
+            });
+        }
+        window.addEventListener('scroll', reveal);
+        window.onload = () => { reveal(); };
+
+        // Navigation
+        function scrollToId(id) {
+            const el = document.getElementById(id);
+            if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Form Logic
+        document.getElementById('preorderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            this.style.opacity = '0';
+            setTimeout(() => {
+                this.style.display = 'none';
+                document.getElementById('successMsg').classList.remove('hidden');
+            }, 500);
+        });
+    </script>
+</body>
+</html>
